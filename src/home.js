@@ -1,11 +1,7 @@
 import React from 'react';
-import IconMenu from 'material-ui/IconMenu';
-import IconButton from 'material-ui/IconButton';
-import NavigationExpandMoreIcon from 'material-ui/svg-icons/navigation/expand-more';
 import MenuItem from 'material-ui/MenuItem';
 import FontIcon from 'material-ui/FontIcon';
 import DropDownMenu from 'material-ui/DropDownMenu';
-import RaisedButton from 'material-ui/RaisedButton';
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -13,8 +9,11 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin();
 
-export default class ToolbarExamplesSimple extends React.Component {
+// Components
+import UserModal from './usermodal.js';
 
+
+export default class ToolbarExamplesSimple extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -22,7 +21,7 @@ export default class ToolbarExamplesSimple extends React.Component {
     };
   }
 
-  handleChange = (event, index, value) => this.setState({value});
+  handleChange = (e) => this.setState({value: e.value});
 
   render() {
     return (
@@ -39,20 +38,10 @@ export default class ToolbarExamplesSimple extends React.Component {
           </DropDownMenu>
         </ToolbarGroup>
         <ToolbarGroup>
-          <ToolbarTitle text="Options" />
-          <FontIcon className="material-icons">menu</FontIcon>
+          <ToolbarTitle text="Opciones" />
+            <FontIcon className="material-icons">menu</FontIcon>
           <ToolbarSeparator />
-          <RaisedButton label="Create Broadcast" primary={true} />
-          <IconMenu
-            iconButtonElement={
-              <IconButton touch={true}>
-                <NavigationExpandMoreIcon />
-              </IconButton>
-            }
-          >
-            <MenuItem primaryText="Download" />
-            <MenuItem primaryText="More Info" />
-          </IconMenu>
+          <UserModal />
         </ToolbarGroup>
       </Toolbar>
     );
