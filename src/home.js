@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import MenuItem from 'material-ui/MenuItem';
 import FontIcon from 'material-ui/FontIcon';
 import DropDownMenu from 'material-ui/DropDownMenu';
@@ -12,16 +12,16 @@ injectTapEventPlugin();
 // Components
 import UserModal from './usermodal.js';
 
-
-export default class ToolbarExamplesSimple extends React.Component {
+export default class ToolbarExamplesSimple extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      value: 3,
+      value: 1
     };
+    this.handleChange = this.handleChange.bind(this)
   }
 
-  handleChange = (e) => this.setState({value: e.value});
+  handleChange = (event, index, value) => this.setState({value});
 
   render() {
     return (
