@@ -12,7 +12,7 @@ injectTapEventPlugin();
 // Components
 import UserModal from './usermodal.js';
 
-export default class ToolbarExamplesSimple extends Component {
+export default class ToolbarHeader extends Component {
   constructor(props) {
     super(props)
     this.state = {

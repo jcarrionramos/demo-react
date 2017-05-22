@@ -9,7 +9,7 @@ const customContentStyle = {
   maxWidth: 'none',
 };
 
-export default class DialogExampleModal extends React.Component {
+export default class LoginModal extends React.Component {
   constructor(){
     super();
     this.state = {
