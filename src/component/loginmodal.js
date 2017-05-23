@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
+import FontIcon from 'material-ui/FontIcon';
 import TextField from 'material-ui/TextField';
 
 const customContentStyle = {
@@ -9,7 +10,7 @@ const customContentStyle = {
   maxWidth: 'none',
 };
 
-export default class LoginModal extends React.Component {
+export default class LoginModal extends Component {
   constructor(){
     super();
     this.state = {
@@ -41,13 +42,16 @@ export default class LoginModal extends React.Component {
 
     return (
       <div>
-        <RaisedButton label="Iniciar Sesión" primary={true} onTouchTap={this.handleOpen} />
+        <RaisedButton
+          icon={<FontIcon className="material-icons">person</FontIcon>}
+          label="Iniciar Sesión"
+          primary={true}
+          onTouchTap={this.handleOpen} />
         <Dialog title="Login" actions={actions} modal={true} open={this.state.open} contentStyle={customContentStyle} >
           <TextField
             hintText="Escriba su usuario"
             floatingLabelText="Usuario"
-          />
-          <br/>
+          /><br/>
           <TextField
             hintText="Esciba su constraseña"
             floatingLabelText="Contraseña"

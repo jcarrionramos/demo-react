@@ -3,20 +3,16 @@ import MenuItem from 'material-ui/MenuItem';
 import FontIcon from 'material-ui/FontIcon';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-
-// Needed for onTouchTap
-// http://stackoverflow.com/a/34015469/988941
-injectTapEventPlugin();
 
 // Components
-import UserModal from './usermodal.js';
+import LoginModal from './component/loginmodal';
+import RegisterModal from './component/register';
 
 export default class ToolbarHeader extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      value: 1
+      value: 3
     };
     this.handleChange = this.handleChange.bind(this)
   }
@@ -41,7 +37,8 @@ export default class ToolbarHeader extends Component {
           <ToolbarTitle text="Opciones" />
             <FontIcon className="material-icons">menu</FontIcon>
           <ToolbarSeparator />
-          <UserModal />
+          <LoginModal />
+          <RegisterModal />
         </ToolbarGroup>
       </Toolbar>
     );
