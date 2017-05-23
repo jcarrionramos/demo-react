@@ -6,7 +6,7 @@ import FontIcon from 'material-ui/FontIcon';
 import TextField from 'material-ui/TextField';
 
 const customContentStyle = {
-  width: '25%',
+  width: '35%',
   maxWidth: 'none',
 };
 
@@ -47,15 +47,17 @@ export default class LoginModal extends Component {
           label="Iniciar Sesión"
           primary={true}
           onTouchTap={this.handleOpen} />
-        <Dialog title="Login" actions={actions} modal={true} open={this.state.open} contentStyle={customContentStyle} >
+        <Dialog title="Login" actions={actions} open={this.state.open} contentStyle={customContentStyle} >
           <TextField
-            hintText="Escriba su usuario"
+            hintText="Escriba su email"
             floatingLabelText="Usuario"
-          /><br/>
+            fullWidth={true}
+          />
           <TextField
             hintText="Esciba su constraseña"
             floatingLabelText="Contraseña"
             type="password"
+            fullWidth={true}
           />
         </Dialog>
       </div>

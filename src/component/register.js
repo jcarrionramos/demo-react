@@ -5,7 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
 const customContentStyle = {
-  width: '25%',
+  width: '35%',
   maxWidth: 'none',
 };
 
@@ -42,21 +42,32 @@ export default class RegisterModal extends Component {
     return (
       <div>
         <FlatButton label="Crear Cuenta" secondary={true} onTouchTap={this.handleOpen} />
-        <Dialog title="Nueva Cuenta" actions={actions} modal={true} open={this.state.open} contentStyle={customContentStyle} >
+        <Dialog title="Nueva Cuenta" actions={actions} open={this.state.open} contentStyle={customContentStyle} >
           <TextField
-            hintText="Escriba su usuario"
-            floatingLabelText="Usuario"
+            hintText="Escriba su nombre"
+            floatingLabelText="Nombre"
+            fullWidth={true}
           />
-          <br/>
+          <TextField
+            hintText="Escriba su apellido"
+            floatingLabelText="Apellido"
+            fullWidth={true}
+          />
           <TextField
             hintText="Esciba su constraseña"
             floatingLabelText="Contraseña"
             type="password"
+            fullWidth={true}
           />
           <TextField
-            hintText="Esciba su constraseña"
-            floatingLabelText="Confirmar contraseña"
-            type="password"
+            hintText="Escriba su email"
+            floatingLabelText="Correo Electrónico"
+            fullWidth={true}
+          />
+          <TextField
+            hintText="Escriba su numero de contacto"
+            floatingLabelText="Numero Telefónico"
+            fullWidth={true}
           />
         </Dialog>
       </div>
